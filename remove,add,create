@@ -1,0 +1,48 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
+int main(){
+  /*input 7(length of array)....elements inputed, index asked which are to be added and then new elements n are added to the same position*/
+  int size;
+  printf("Enter the length of the array:");
+  scanf("%d",&size);  
+  int *arr=(int * ) malloc(size*sizeof(int));
+    if (arr==NULL){
+    printf("Error Found!");
+    return 1;
+  }
+  for (int i=0;i<size;i++){
+    printf("Enter the element %d : ",i);
+    scanf("%d",&arr[i]);
+  }
+  int rem;
+  printf("\nEnter the element position to be removed:");
+  scanf("%d",&rem);
+  for (int j=0;j<size-1;j++){
+      if (rem==j){
+          arr[j]=arr[j+1];
+      }
+  }
+  size--;
+    for(int k=0;k<size;k++){
+      printf("%d ",arr[k]);
+  }
+  //element additon
+  int add,pos;
+  printf("\nEnter the position from where the element is to be added:");
+  scanf("%d",&pos);
+  printf("\nEnter the element to be added:");
+  scanf("%d",&add);
+  size++;
+  arr = (int *)realloc(arr, size * sizeof(int));
+
+for (int m = size - 1; m > pos; m--) {
+    arr[m] = arr[m - 1];
+}
+
+  arr[pos]=add;
+  for(int k=0;k<size;k++){
+      printf("%d ",arr[k]);
+  }
+  return 0;
+}
