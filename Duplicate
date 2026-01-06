@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main() {
+    int arr[6] = {2, 3, 5, 3, 6, 2};
+    int n = 6;
+    int found = 0; // flag to mark when duplicate found
+
+    for (int i = 0; i < n; i++) {
+        for (int j = i + 1; j < n; j++) {
+            if (arr[i] == arr[j]) {
+                printf("First duplicate element = %d (found at position %d)\n", arr[i], j);
+                found = 1;
+                break;
+            }
+        }
+        if (found) break; // stop outer loop too
+    }
+
+    if (!found) {
+        printf("No duplicate elements found.\n");
+    }
+
+    return 0;
+}
