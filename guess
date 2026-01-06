@@ -1,0 +1,19 @@
+#guess the number
+print('Welcome To Guess The Number')
+import random
+c=0
+k=random.randint(1,10)
+while True:    
+    n=int(input('guess a number'))
+    if n<k:
+                            print("it's less than the number")
+    elif n>k:
+                            print("it's more than the number")
+    else:
+                            break
+    c=c+1
+    ch=input('do u want to play again?-yes/no')
+    if ch.lower()=='no':
+                            break
+print('you took',c,'guesses to be correct')
+print('the number was',k)
