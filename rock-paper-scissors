@@ -1,0 +1,16 @@
+#rock paper scissors
+print ('Hey! Welcome to the rock,paper,scissors game !')
+while True:
+                p1=input('player 1 select one - Rock\Paper\Scissors :')
+                p2=input('player 2 select one - Rock\Paper\Scissors:')
+                if p1==p2:
+                    print('A Tie')
+                elif (p1.lower()=='rock' and p2.lower()=='scissors') or (p1.lower()=='scissors' and p1.lower()=='paper' ) or (p1.lower()=='paper' and p2.lower()=='rock') :
+                    print('Player 1 wins')
+                else:
+                    print('Player 2 wins')
+                print('Thank You!')
+                ch=input('Do u want to play again: Yes/no')
+                if ch.lower()=='no':
+                    break
+print("Thank You !")
